@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 6 - Fetch API & DOM Event Handling</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Pertemuan 6 Aplikasi Web</h1>
+    <p>Fetch API, DOM, dan Event Handling</p>
+    <nav>
+      <a href="#produk">Data Produk</a>
+      <a href="#form">Form Pendaftaran</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. FETCH API -->
+    <section id="produk" class="panel">
+      <h2>Daftar Produk</h2>
+      
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <ul id="product-list" class="product-grid"></ul>
+    </section>
+
+    <!-- 2. FORM DOM & EVENT HANDLING -->
+    <section id="form" class="panel">
+      <h2>Pendaftaran Workshop</h2>
+      <p class="hint">Isi data berikut untuk mendaftar. Semua kolom bertanda * wajib diisi.</p>
+
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label for="nama">Nama lengkap *</label>
+          <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" autocomplete="name">
+          <small class="error" id="error-nama"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="budi@email.com" autocomplete="email">
+          <small class="error" id="error-email"></small>
+        </div>
+
+        <div class="field">
+          <label for="telepon">Nomor HP *</label>
+          <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" autocomplete="tel">
+          <small class="error" id="error-telepon"></small>
+        </div>
+
+        <div class="field">
+          <label for="workshop">Pilihan workshop *</label>
+          <select id="workshop" name="workshop">
+            <option value="">-- Pilih workshop --</option>
+            <option value="Dasar JavaScript">Dasar JavaScript</option>
+            <option value="Fetch API & JSON">Fetch API &amp; JSON</option>
+            <option value="Desain Web Responsif">Desain Web Responsif</option>
+          </select>
+          <small class="error" id="error-workshop"></small>
+        </div>
+
+        <div class="field">
+          <label for="catatan">Catatan (opsional)</label>
+          <textarea id="catatan" name="catatan" rows="3" maxlength="120" placeholder="Tulis harapanmu mengikuti workshop"></textarea>
+          <small class="counter" id="counter">0 / 120</small>
+        </div>
+
+        <div class="field checkbox">
+          <input type="checkbox" id="setuju" name="setuju">
+          <label for="setuju">Saya menyatakan data yang diisi sudah benar *</label>
+          <small class="error" id="error-setuju"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Daftar sekarang</button>
+          <button type="button" id="btn-reset" class="btn">Kosongkan form</button>
+        </div>
+      </form>
+
+      <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dikerjakan secara individu &mdash; Nama Lengkap (NIM)</p>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
